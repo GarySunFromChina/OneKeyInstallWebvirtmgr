@@ -103,7 +103,19 @@ function install_webvirtmgr {
     firewall-cmd --add-port=5905/tcp --permanent
     firewall-cmd --add-port=5906/tcp --permanent
     firewall-cmd --add-port=5907/tcp --permanent
+    firewall-cmd --add-port=5908/tcp --permanent
+    firewall-cmd --add-port=5909/tcp --permanent
 
+    firewall-cmd --add-port=5910/tcp --permanent
+    firewall-cmd --add-port=5911/tcp --permanent
+    firewall-cmd --add-port=5912/tcp --permanent
+    firewall-cmd --add-port=5913/tcp --permanent
+    firewall-cmd --add-port=5914/tcp --permanent
+    firewall-cmd --add-port=5915/tcp --permanent
+    firewall-cmd --add-port=5916/tcp --permanent
+    firewall-cmd --add-port=5917/tcp --permanent
+    firewall-cmd --add-port=5918/tcp --permanent
+    firewall-cmd --add-port=5919/tcp --permanent
 
     firewall-cmd --reload
 
