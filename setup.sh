@@ -101,16 +101,17 @@ function install_webvirtmgr {
     systemctl enable nginx.service
 
     systemctl enable supervisord.service
-    
-}
 
-function config_KVMServer_SSH {
     #（1） 生成ssh key
     #建议config文件，并写入配置
     echo "============================Create a key for ssh :======================================"
 
     su - nginx -s /bin/bash -c 'ssh-keygen&&touch ~/.ssh/config&&echo -e "StrictHostKeyChecking=no\nUserKnownHostsFile=/dev/null" >> ~/.ssh/config'
     su - nginx -s /bin/bash -c "chmod 0600 ~/.ssh/config"
+    
+}
+
+function config_KVMServer_SSH {
     clear
     #（2）建立 libvirt 帐号 =========================================================
     echo "============================Create a libvirt account in the kvm server :======================================"
