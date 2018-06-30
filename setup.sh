@@ -90,34 +90,6 @@ function install_webvirtmgr {
 
     cp ./webvirtmgr.ini /etc/supervisord.d/webvirtmgr.ini
 
-    #防火墙设置
-
-    firewall-cmd --add-port=80/tcp --permanent
-    firewall-cmd --add-port=80/udp --permanent
-
-    firewall-cmd --add-port=5900/tcp --permanent
-    firewall-cmd --add-port=5901/tcp --permanent
-    firewall-cmd --add-port=5902/tcp --permanent
-    firewall-cmd --add-port=5903/tcp --permanent
-    firewall-cmd --add-port=5904/tcp --permanent
-    firewall-cmd --add-port=5905/tcp --permanent
-    firewall-cmd --add-port=5906/tcp --permanent
-    firewall-cmd --add-port=5907/tcp --permanent
-    firewall-cmd --add-port=5908/tcp --permanent
-    firewall-cmd --add-port=5909/tcp --permanent
-
-    firewall-cmd --add-port=5910/tcp --permanent
-    firewall-cmd --add-port=5911/tcp --permanent
-    firewall-cmd --add-port=5912/tcp --permanent
-    firewall-cmd --add-port=5913/tcp --permanent
-    firewall-cmd --add-port=5914/tcp --permanent
-    firewall-cmd --add-port=5915/tcp --permanent
-    firewall-cmd --add-port=5916/tcp --permanent
-    firewall-cmd --add-port=5917/tcp --permanent
-    firewall-cmd --add-port=5918/tcp --permanent
-    firewall-cmd --add-port=5919/tcp --permanent
-
-    firewall-cmd --reload
 
     #允许连接到httpd 以下为手动打开
     #/usr/sbin/setsebool httpd_can_network_connect true 
@@ -188,6 +160,34 @@ function config_KVMServer_SSH {
     
     su - nginx -s /bin/bash -c 'sshpass -p "'$password'" ssh-copy-id '$username'@'$host   
 
+    #防火墙设置
+
+    firewall-cmd --add-port=80/tcp --permanent
+    firewall-cmd --add-port=80/udp --permanent
+
+    firewall-cmd --add-port=5900/tcp --permanent
+    firewall-cmd --add-port=5901/tcp --permanent
+    firewall-cmd --add-port=5902/tcp --permanent
+    firewall-cmd --add-port=5903/tcp --permanent
+    firewall-cmd --add-port=5904/tcp --permanent
+    firewall-cmd --add-port=5905/tcp --permanent
+    firewall-cmd --add-port=5906/tcp --permanent
+    firewall-cmd --add-port=5907/tcp --permanent
+    firewall-cmd --add-port=5908/tcp --permanent
+    firewall-cmd --add-port=5909/tcp --permanent
+
+    firewall-cmd --add-port=5910/tcp --permanent
+    firewall-cmd --add-port=5911/tcp --permanent
+    firewall-cmd --add-port=5912/tcp --permanent
+    firewall-cmd --add-port=5913/tcp --permanent
+    firewall-cmd --add-port=5914/tcp --permanent
+    firewall-cmd --add-port=5915/tcp --permanent
+    firewall-cmd --add-port=5916/tcp --permanent
+    firewall-cmd --add-port=5917/tcp --permanent
+    firewall-cmd --add-port=5918/tcp --permanent
+    firewall-cmd --add-port=5919/tcp --permanent
+
+    firewall-cmd --reload
     echo "Finish OK! Please Reboot It." 
 }
 
